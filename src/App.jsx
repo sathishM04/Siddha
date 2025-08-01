@@ -2,6 +2,8 @@ import "./App.css";
 import Nav from "./Component/Nav";
 import Home from "./Component/Home";
 import About from "./Component/About";
+// import Service from "./Component/Service";
+import ServiceImages from "./Component/ServiceImages";
 
 function App() {
   return (
@@ -9,6 +11,8 @@ function App() {
       <Nav />
       <Home />
       <About />
+      {/* <Service /> */}
+      <ServiceImages />
     </div>
   );
 }
