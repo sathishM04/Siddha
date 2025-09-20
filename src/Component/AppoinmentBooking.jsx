@@ -86,7 +86,6 @@ const AppoinmentBooking = ({ open, setOpen }) => {
       email: data.email,
       address: address,
       procedure: procedure,
-      address: address,
     };
     emailjs
       .send(
