@@ -265,6 +265,7 @@ const Contact = () => {
                       <Button
                         variant="outlined"
                         color="error"
+                        sx={{ textTransform: "none" }}
                         startIcon={<CloseIcon />}
                         onClick={() => handleClose()}
                       >
@@ -274,7 +275,10 @@ const Contact = () => {
                     <Grid size={{ xs: 5, sm: 2.5, md: 2.5, lg: 2.5 }}>
                       <Button
                         variant="contained"
-                        sx={{ backgroundColor: "#93bb57" }}
+                        sx={{
+                          backgroundColor: "#93bb57",
+                          textTransform: "none",
+                        }}
                         endIcon={<SendIcon />}
                         type="submit"
                       >
