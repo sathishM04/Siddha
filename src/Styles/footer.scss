@@ -1,0 +1,59 @@
+.footer-page {
+  background-color: beige;
+  padding: 40px 60px;
+  @media (max-width: 450px) {
+    padding: 40px 20px;
+  }
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+
+    img {
+      width: 70px;
+      height: 70px;
+      margin-right: 10px;
+    }
+
+    span {
+      font-weight: 700;
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
+
+  .logo-content {
+    width: 70%;
+    font-family: auto;
+    font-weight: 600;
+    font-size: 20px;
+    color: #619a29;
+    margin: 0px;
+  }
+
+  .logo-treatment {
+    margin: 0px;
+    font-size: 10px;
+    color: #619a29;
+    font-weight: 500;
+  }
+
+  .footer-header {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .footer-content {
+    text-decoration: none;
+    font-size: 15px;
+    margin-bottom: 3px;
+    color: #819291;
+    font-weight: 600;
+  }
+  .footer-copy {
+    display: grid;
+    justify-content: center;
+    font-size: 13px;
+  }
+}

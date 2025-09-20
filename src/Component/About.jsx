@@ -1,16 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../Styles/about.scss";
 import Button from "react-bootstrap/Button";
+import { useLocation } from "react-router-dom";
 
 const About = () => {
   const [language, setLanguage] = useState(false);
+  const location = useLocation();
+  const about = useRef(null);
+
+  useEffect(() => {
+    if (location.hash === "#about" && about.current) {
+      // about.current.scrollIntoView({ behaviour: "smooth" });
+      window.scrollTo({
+        top: about.current.offsetTop - 100,
+        behavior: "smooth",
+      });
+    }
+  }, [location]);
 
   const handleLanguageSwitch = () => {
     setLanguage(!language);
   };
 
   return (
-    <div id="about">
+    <div id="about" ref={about}>
       <div className="section-title" data-aos="fade-up">
         <h3>About</h3>
       </div>
@@ -19,11 +32,13 @@ const About = () => {
         {/* <h4 className="sec-title">
           {!language ? "About Voice of Chenduraan" : "செந்தூரான் குரல்"}
         </h4> */}
-        <h2>
-          {!language
-            ? "About Voice of Chenduraan"
-            : "செந்தூரான் குரல் – யூனிவர்சல் ஒருங்கிணைந்த சிகிச்சை மையம் பற்றி"}
-        </h2>
+        {!language ? (
+          <h2 className="english-header">"About Voice of Chenduraan"</h2>
+        ) : (
+          <h2 className="tamil-header">
+            "செந்தூரான் குரல் – யூனிவர்சல் ஒருங்கிணைந்த சிகிச்சை மையம்"
+          </h2>
+        )}
         {!language ? (
           <p>
             “Healing the Inner Core, Balancing Body and Mind”—this is not just a

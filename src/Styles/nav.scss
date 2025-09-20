@@ -1,119 +1,294 @@
-.navbar {
-  position: fixed !important;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  // background: rgba(255, 255, 255, 0.1);
-  background: rgb(24 63 18 / 10%);
-  border-radius: 20px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  padding: 10px 20px;
-  z-index: 1000;
+#intial-navbar {
+  .navbar {
+    position: fixed !important;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    // background: rgba(255, 255, 255, 0.1);
+    background: rgb(24 63 18 / 10%);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    z-index: 1000;
 
-  .container-fluid {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-    margin: 0px;
-
-    img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
+    .container-fluid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    span {
-      font-weight: 700;
-      color: white;
-      font-size: 1.2rem;
-    }
-  }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      margin: 0px;
 
-  .logo-content {
-    width: 50%;
-    font-family: auto;
-    font-weight: 600;
-    font-size: 15px;
-    color: #619a29;
-    margin: 0px;
-  }
+      img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+      @media (max-width: 400px) {
+        img {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }
+      }
 
-  .logo-treatment {
-    margin: 0px;
-    font-size: 10px;
-    color: #619a29;
-    font-weight: 500;
-  }
-
-  .navbar-nav {
-    display: flex;
-    font-weight: 500;
-    font-family: "monospace";
-    align-items: center;
-  }
-
-  .nav-link {
-    color: white;
-    position: relative;
-    transition: color 0.3s;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background-color: white;
-      transition: width 0.3s;
+      span {
+        font-weight: 700;
+        color: white;
+        font-size: 1.2rem;
+      }
     }
 
-    &:hover::after {
-      width: 100%;
-    }
-    &:focus::after {
-      width: 100%;
-    }
-  }
-
-  .nav-link:focus {
-    color: #88ad1a;
-    font-weight: 500;
-  }
-
-  .nav-link:hover {
-    color: #88ad1a;
-  }
-
-  .auth-buttons {
-    display: flex;
-    gap: 10px;
-
-    .btn {
-      border-radius: 12px;
-      padding: 6px 16px;
+    .logo-content {
+      width: 50%;
+      font-family: auto;
       font-weight: 600;
-      border: none;
-      cursor: pointer;
+      font-size: 15px;
+      color: #619a29;
+      margin: 0px;
+    }
+    @media (max-width: 400px) {
+      .logo-content {
+        font-size: 10px;
+      }
     }
 
-    .sign-in {
-      background: transparent;
+    .logo-treatment {
+      margin: 0px;
+      font-size: 10px;
+      color: #619a29;
+      font-weight: 500;
+    }
+
+    .navbar-nav {
+      display: flex;
+      font-weight: 500;
+      font-family: "monospace";
+      align-items: end;
+    }
+
+    .nav-link {
       color: white;
+      position: relative;
+      transition: color 0.3s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: white;
+        transition: width 0.3s;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+      &:focus::after {
+        width: 100%;
+      }
     }
 
-    .sign-up {
-      background: white;
-      // color: black;
+    .nav-link:focus {
       color: #88ad1a;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: #88ad1a;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+
+      .btn {
+        border-radius: 12px;
+        padding: 6px 16px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+      }
+
+      .sign-in {
+        background: transparent;
+        color: white;
+      }
+
+      .sign-up {
+        background: white;
+        // color: black;
+        color: #88ad1a;
+      }
+    }
+  }
+  .icon-arrow {
+    position: fixed;
+    z-index: 100;
+    border: 3px solid;
+    border-radius: 50%;
+    font-size: 40px;
+    right: 30px;
+    bottom: 40px;
+    background: #96b41f;
+    color: white;
+  }
+  .icon-booking {
+    position: fixed;
+    z-index: 100;
+    border: 3px solid;
+    border-radius: 50%;
+    font-size: 40px;
+    right: 27px;
+    bottom: 85px;
+    background: #96b41f;
+    padding: 4px;
+    width: 45px;
+    height: 45px;
+    color: white;
+  }
+}
+
+#secondary-navbar {
+  .navbar {
+    position: fixed !important;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 15%;
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    z-index: 1000;
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      margin: 0px;
+
+      img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      span {
+        font-weight: 700;
+        color: white;
+        font-size: 1.2rem;
+      }
+    }
+
+    .logo-content {
+      width: 50%;
+      font-family: auto;
+      font-weight: 600;
+      font-size: 15px;
+      color: #619a29;
+      margin: 0px;
+    }
+
+    .logo-treatment {
+      margin: 0px;
+      font-size: 10px;
+      color: #619a29;
+      font-weight: 500;
+    }
+
+    .navbar-collapse {
+      flex-grow: 0;
+    }
+
+    .navbar-nav {
+      display: flex;
+      font-weight: 500;
+      font-family: "monospace";
+      align-items: end;
+    }
+
+    .nav-link {
+      color: black;
+      position: relative;
+      transition: color 0.3s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: #619a29;
+        transition: width 0.3s;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+      &:focus::after {
+        width: 100%;
+      }
+    }
+
+    .nav-link:focus {
+      color: #88ad1a;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: #88ad1a;
+    }
+    .book-appoinment {
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+      padding-block: 0.5rem;
+      padding-inline: 1.25rem;
+      background-color: #619a29;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #ffff;
+      gap: 10px;
+      font-weight: bold;
+      border: 3px solid #ffffff4d;
+      outline: none;
+      overflow: hidden;
+      font-size: 15px;
+    }
+
+    .icon {
+      width: 16px;
+      height: 24px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .book-appoinment:hover {
+      transform: scale(1.05);
+      border-color: #fff9;
+    }
+
+    .book-appoinment:hover .icon {
+      transform: translate(4px);
+    }
+
+    .book-appoinment:hover::before {
+      animation: shine 1.5s ease-out infinite;
+    }
+    @media (max-width: 990px) {
+      .book-appoinment {
+        display: none;
+      }
     }
   }
 }

@@ -1,0 +1,47 @@
+#contact {
+  .section-title {
+    display: block;
+    justify-items: center;
+    overflow: hidden;
+    .section-header {
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+  .section-title .section-header:before,
+  .section-title .section-header:after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: #e84545;
+    display: inline-block;
+  }
+
+  .section-title .section-header:before {
+    margin: 0 15px 10px 0;
+  }
+
+  .section-title .section-header:after {
+    margin: 0 0 10px 15px;
+  }
+  .contact-page {
+    margin: 25px 20px;
+    .css-1sazv7p-MuiStack-root > :not(style):not(style) {
+      margin: 5px 20px 20px 25px;
+    }
+    .css-d2lum6-MuiButtonBase-root-MuiButton-root {
+      text-transform: none;
+    }
+    .css-1hz6i2n-MuiButtonBase-root-MuiButton-root {
+      text-transform: none;
+    }
+    @media (max-width: 600px) {
+      .name-field {
+        margin-top: 15px;
+      }
+      .email-field {
+        margin-top: 15px;
+      }
+    }
+  }
+}

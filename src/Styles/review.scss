@@ -1,0 +1,57 @@
+#review {
+  .section-title {
+    display: block;
+    justify-items: center;
+    overflow: hidden;
+    .section-header {
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+  .section-title .section-header:before,
+  .section-title .section-header:after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: #e84545;
+    display: inline-block;
+  }
+
+  .section-title .section-header:before {
+    margin: 0 15px 10px 0;
+  }
+
+  .section-title .section-header:after {
+    margin: 0 0 10px 15px;
+  }
+  .review-page {
+    margin: 25px 20px;
+    .css-hlbajn-MuiRating-label {
+      margin-top: 4px;
+      color: #faaf00;
+    }
+    .css-13f3t7 {
+      overflow: scroll;
+      overflow-x: auto;
+      padding: 10px;
+      height: 70vh;
+    }
+    .css-d2lum6-MuiButtonBase-root-MuiButton-root {
+      text-transform: none;
+    }
+    .css-1hz6i2n-MuiButtonBase-root-MuiButton-root {
+      text-transform: none;
+    }
+    .css-x1nw2t-MuiFormControl-root-MuiTextField-root {
+      margin-top: 10px;
+    }
+    @media (max-width: 470px) {
+      .rating-field {
+        margin-top: 15px;
+      }
+      .css-x1nw2t-MuiFormControl-root-MuiTextField-root {
+        margin-top: 10px;
+      }
+    }
+  }
+}

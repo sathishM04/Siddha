@@ -29,7 +29,17 @@
     padding: 0px 15px;
     margin-top: 25px;
 
-    h2 {
+    .tamil-header {
+      font-family: "Manrope", sans-serif;
+      font-size: 30px;
+      color: #003733;
+      line-height: 1.2em;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      margin-top: 0.75rem;
+      letter-spacing: -0.03em;
+    }
+    .english-header {
       font-family: "Manrope", sans-serif;
       font-size: 40px;
       color: #003733;

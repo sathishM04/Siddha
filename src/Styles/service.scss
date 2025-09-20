@@ -27,15 +27,22 @@
   }
 
   .service-page {
-    max-width: 1175px;
+    max-width: 100%;
     margin: 25px auto 0;
     overflow: hidden;
-    padding: 15px 15px;
+    padding: 15px;
 
     .slider {
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .group {
       display: flex;
-      width: 200%;
-      animation: scrollMarquee 25s linear infinite;
+      width: max-content;
+      will-change: transform;
+      animation: scrollMarquee 30s linear infinite;
 
       &:hover {
         animation-play-state: paused;
@@ -45,6 +52,19 @@
     .item {
       flex: 0 0 auto;
       padding: 0 10px;
+      height: 230px;
+    }
+
+    @media (max-width: 768px) {
+      .item {
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .item {
+        height: 150px;
+      }
     }
 
     .item img {
@@ -54,14 +74,6 @@
       border-radius: 10px;
     }
 
-    @keyframes scrollMarquee {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
     .slider-name {
       width: 250px;
       background-color: #212529;
@@ -70,17 +82,27 @@
       font-size: 20px;
       font-weight: 600;
       position: sticky;
-      bottom: 95px;
+      bottom: 30px;
       height: 45px;
       opacity: 0.5;
       display: flex;
       align-items: center;
       justify-content: center;
+
+      span {
+        color: white;
+      }
     }
 
-    .slider-name span {
-      color: white;
+    @keyframes scrollMarquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
+
     .btn-conteiner {
       display: flex;
       justify-content: center;
@@ -104,14 +126,14 @@
       border-radius: 100px;
       box-shadow: 0 0 0.2em 0 var(--color-background);
       transition: all 0.5s ease;
-    }
 
-    .btn-content:hover,
-    .btn-content:focus {
-      outline: 0.1em solid transparent;
-      outline-offset: 0.2em;
-      box-shadow: 0 0 0.4em 0 var(--color-background);
-      animation: btn-pulse 1s;
+      &:hover,
+      &:focus {
+        outline: 0.1em solid transparent;
+        outline-offset: 0.2em;
+        box-shadow: 0 0 0.4em 0 var(--color-background);
+        animation: btn-pulse 1s;
+      }
     }
 
     .icon-arrow {
@@ -142,6 +164,37 @@
       }
       50% {
         color: #93bb57;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .item img {
+        width: 180px;
+        height: 140px;
+      }
+    }
+    @media (max-width: 768px) {
+      .slider-name {
+        width: 180px;
+        font-size: 16px;
+        height: 40px;
+        bottom: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .item img {
+        width: 140px;
+        height: 110px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .slider-name {
+        width: 140px;
+        font-size: 13px;
+        height: 35px;
+        bottom: 40px;
       }
     }
   }

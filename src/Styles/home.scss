@@ -9,6 +9,11 @@
     width: 100%;
     height: 100vh;
   }
+  @media (max-width: 600px) {
+    img {
+      height: 50vh;
+    }
+  }
   /* From Uiverse.io by adeladel522 */
   .book-appoinment {
     position: relative;
@@ -101,6 +106,12 @@
     display: block;
     justify-items: center;
   }
+  @media (max-width: 600px) {
+    .carosal-image {
+      width: 100%;
+      left: 0%;
+    }
+  }
   .carosal-content {
     position: absolute;
     bottom: 1.25rem;
@@ -112,5 +123,14 @@
     text-align: center;
     display: block;
     justify-items: center;
+  }
+  @media (max-width: 600px) {
+    .carosal-content {
+      width: 100%;
+      left: 0%;
+    }
+    p {
+      display: none;
+    }
   }
 }
