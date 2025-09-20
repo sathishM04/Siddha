@@ -244,7 +244,7 @@ const Contact = () => {
                       />
                     </Grid>
                   </Grid>
-                  <Stack spacing={2}>
+                  <Stack spacing={2} sx={{ margin: "5px 20px 20px 25px;" }}>
                     <TextField
                       id="standard-textarea"
                       label="Description"
