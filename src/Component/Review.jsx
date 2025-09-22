@@ -358,7 +358,11 @@ const Review = () => {
                         />
                         {review.username}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography
+                        variant="body2"
+                        className="dateAndTime"
+                        color="text.secondary"
+                      >
                         {review.timestamp?.toDate
                           ? review.timestamp.toDate().toLocaleString("en-US", {
                               year: "numeric",

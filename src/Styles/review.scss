@@ -60,5 +60,10 @@
         margin-top: 10px;
       }
     }
+    @media (max-width: 370px) {
+      .dateAndTime {
+        width: 80px;
+      }
+    }
   }
 }
