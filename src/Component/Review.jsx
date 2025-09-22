@@ -304,6 +304,7 @@ const Review = () => {
                         <Button
                           variant="outlined"
                           color="error"
+                          sx={{ textTransform: "none" }}
                           startIcon={<CloseIcon />}
                           onClick={handleClose}
                         >
@@ -313,7 +314,10 @@ const Review = () => {
                       <Grid item xs={6} sm={3}>
                         <Button
                           variant="contained"
-                          sx={{ backgroundColor: "#93bb57" }}
+                          sx={{
+                            backgroundColor: "#93bb57",
+                            textTransform: "none",
+                          }}
                           endIcon={<SendIcon />}
                           type="submit"
                         >
