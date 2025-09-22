@@ -26,8 +26,9 @@
   }
   .review-page {
     margin: 25px 20px;
+    justify-content: center;
     .css-hlbajn-MuiRating-label {
-      margin-top: 4px;
+      margin-top: 4px !important;
       color: #faaf00;
     }
     .css-13f3t7 {
@@ -35,6 +36,11 @@
       overflow-x: auto;
       padding: 10px;
       height: 70vh;
+    }
+    @media (max-width: 650px) {
+      .css-13f3t7 {
+        scrollbar-width: none;
+      }
     }
     .css-d2lum6-MuiButtonBase-root-MuiButton-root {
       text-transform: none;

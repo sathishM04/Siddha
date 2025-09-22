@@ -26,7 +26,7 @@ import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import CloseIcon from "@mui/icons-material/Close";
-import emailjs from "@emailjs/browser";
+import { sendEmail } from "../emailservice";
 
 const schema = yup.object().shape({
   fullName: yup
@@ -45,12 +45,8 @@ const schema = yup.object().shape({
     .email("Invalid email format"),
   address: yup.string().required("Address is required"),
   firstVisit: yup.string().required("Please select Yes or No"),
-  // visitCount: yup.string().when("firstVisit", {
-  //   is: "No",
-  //   then: yup.string().required("Follow up visit is required"),
-  // }),
   visitCount: yup.string().when("firstVisit", {
-    is: (val) => val === "Yes", // 👈 required only when firstVisit === "Yes"
+    is: (val) => val === "Yes",
     then: (schema) => schema.required("Follow up visit is required"),
     otherwise: (schema) => schema.notRequired(),
   }),
@@ -75,35 +71,7 @@ const AppoinmentBooking = ({ open, setOpen }) => {
   });
 
   const onSubmit = (data) => {
-    console.log("inn");
-    return;
-    console.log("Form Data:", data);
-    const appoinmentTemplateParams = {
-      fullName: data.fullName,
-      dob: data.dob,
-      gender: data.gender,
-      phone: data.phone,
-      email: data.email,
-      address: address,
-      procedure: procedure,
-    };
-    emailjs
-      .send(
-        "service_af9nx6k",
-        "template_7v6x3qk",
-        appoinmentTemplateParams,
-        "mCeOqDzYTI6u6239b"
-      )
-      .then(
-        (result) => {
-          console.log("success...", result.text);
-          alert("Message sent successfully!");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          alert("Failed to send message. Try again.");
-        }
-      );
+    sendEmail("appointment", data);
     setOpen(false);
     reset();
   };
@@ -148,6 +116,7 @@ const AppoinmentBooking = ({ open, setOpen }) => {
                 sx={{ padding: "5px" }}
               >
                 <TextField
+                  required
                   label="Full Name"
                   variant="standard"
                   fullWidth
@@ -196,6 +165,7 @@ const AppoinmentBooking = ({ open, setOpen }) => {
                 sx={{ padding: "5px" }}
               >
                 <TextField
+                  required
                   select
                   label="Gender"
                   variant="standard"
@@ -219,6 +189,7 @@ const AppoinmentBooking = ({ open, setOpen }) => {
                 sx={{ padding: "5px" }}
               >
                 <TextField
+                  required
                   label="Contact Number"
                   variant="standard"
                   fullWidth
@@ -237,6 +208,7 @@ const AppoinmentBooking = ({ open, setOpen }) => {
                 sx={{ padding: "5px" }}
               >
                 <TextField
+                  required
                   label="Email"
                   variant="standard"
                   fullWidth
@@ -254,6 +226,7 @@ const AppoinmentBooking = ({ open, setOpen }) => {
                 sx={{ padding: "5px" }}
               >
                 <TextField
+                  required
                   label="Address"
                   variant="standard"
                   fullWidth
@@ -270,6 +243,7 @@ const AppoinmentBooking = ({ open, setOpen }) => {
                   <FormControl component="fieldset" error={!!errors.firstVisit}>
                     <FormLabel component="legend">First time visit</FormLabel>
                     <Controller
+                      required
                       name="firstVisit"
                       control={control}
                       render={({ field }) => (
@@ -296,6 +270,7 @@ const AppoinmentBooking = ({ open, setOpen }) => {
                 {firstVisitValue === "Yes" && (
                   <Grid item xs={12} sm={6}>
                     <TextField
+                      required
                       label="Follow Up Visit"
                       variant="standard"
                       fullWidth
@@ -318,6 +293,7 @@ const AppoinmentBooking = ({ open, setOpen }) => {
                 sx={{ padding: "5px" }}
               >
                 <TextField
+                  required
                   select
                   label="Which procedure do you want?"
                   variant="standard"
@@ -360,6 +336,7 @@ const AppoinmentBooking = ({ open, setOpen }) => {
                 sx={{ padding: "5px" }}
               >
                 <TextField
+                  required
                   label="Signs of symptoms"
                   variant="standard"
                   fullWidth
@@ -375,39 +352,12 @@ const AppoinmentBooking = ({ open, setOpen }) => {
 
             <Grid container spacing={2} sx={{ marginBottom: "5px" }}>
               {/* Symptoms Period */}
-              {/* <Grid
-                size={{ xs: 12, sm: 6, md: 6, lg: 6 }}
-                sx={{ padding: "5px", marginTop: "8px" }}
-              >
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <Controller
-                    name="symptomsperiod "
-                    control={control}
-                    render={({ field }) => (
-                      <DatePicker
-                        label="Symptoms Period "
-                        inputFormat="DD/MM/YYYY"
-                        value={field.value || null}
-                        onChange={(date) => field.onChange(date)}
-                        renderInput={(params) => (
-                          <TextField
-                            {...params}
-                            variant="standard"
-                            fullWidth
-                            error={!!errors.dob}
-                            helperText={errors.dob?.message}
-                          />
-                        )}
-                      />
-                    )}
-                  />
-                </LocalizationProvider>
-              </Grid> */}
               <Grid
                 size={{ xs: 12, sm: 6, md: 6, lg: 6 }}
                 sx={{ padding: "5px", marginTop: "8px" }}
               >
                 <TextField
+                  required
                   label="Sympotoms Period"
                   variant="standard"
                   fullWidth

@@ -18,6 +18,7 @@ import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import emailjs from "@emailjs/browser";
+import { sendEmail } from "../emailservice";
 
 const schema = yup.object().shape({
   firstName: yup
@@ -69,37 +70,16 @@ const Contact = () => {
       lastName: "",
       phone: "",
       email: "",
-      rating: 0,
     });
   };
 
   const onSubmit = (data) => {
-    const templateParams = {
-      firstName: data.firstName,
-      lastName: data.lastName,
-      phone: data.phone,
-      email: data.email,
-      description: description,
+    const formData = {
+      ...data,
+      description,
     };
-
-    emailjs
-      .send(
-        "service_t4f4bqc",
-        "template_ix1dyw9",
-        templateParams,
-        "mCeOqDzYTI6u6239b"
-      )
-      .then(
-        (result) => {
-          console.log("success...", result.text);
-          alert("Message sent successfully!");
-          handleClose();
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          alert("Failed to send message. Try again.");
-        }
-      );
+    sendEmail("contact", formData);
+    handleClose();
   };
 
   return (

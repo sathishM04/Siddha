@@ -10,7 +10,6 @@ const About = () => {
 
   useEffect(() => {
     if (location.hash === "#about" && about.current) {
-      // about.current.scrollIntoView({ behaviour: "smooth" });
       window.scrollTo({
         top: about.current.offsetTop - 100,
         behavior: "smooth",

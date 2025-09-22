@@ -178,6 +178,7 @@ const Review = () => {
                         sx={{
                           fontSize: "10px",
                           marginTop: "25px",
+                          marginBottom: "10px",
                           backgroundColor: "#93bb57",
                         }}
                         color="primary"
@@ -326,9 +327,11 @@ const Review = () => {
             </Grid>
 
             {/* Right Section: Review List */}
-            <Grid item xs={12} md={6} lg={6}>
-              <Box sx={{ maxWidth: 600, mx: "auto", mt: 2 }}>
-                {reviews.map((review, index) => (
+            <Box sx={{ maxWidth: 600, mx: "auto", mt: 2 }}>
+              {reviews
+                .slice()
+                .sort((a, b) => b.rating - a.rating)
+                .map((review, index) => (
                   <Paper
                     key={index}
                     elevation={1}
@@ -381,8 +384,7 @@ const Review = () => {
                     </Typography>
                   </Paper>
                 ))}
-              </Box>
-            </Grid>
+            </Box>
           </Grid>
         </Box>
       </Container>

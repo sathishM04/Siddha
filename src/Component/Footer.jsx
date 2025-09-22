@@ -10,15 +10,6 @@ import EmailIcon from "@mui/icons-material/Email";
 const Footer = () => {
   return (
     <div className="footer-page">
-      {/* <div className="d-flex col-4">
-        <a className="navbar-brand" onClick={() => goToHome()}>
-         
-        </a>
-        <div className="d-block">
-          <h4 className="logo-content">VOICE OF CHENDURAAN</h4>
-          <p className="logo-treatment">AYURVEDIC TREATMENT</p>
-        </div>
-      </div> */}
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid sx={{ display: "flex" }} size={{ xs: 12, md: 5, lg: 4 }}>
@@ -55,7 +46,7 @@ const Footer = () => {
                   </Link>
                 </Box>
               </Grid>
-              <Grid size={{ xs: 6, lg: 5 }}>
+              <Grid size={{ xs: 12, sm: 6, md: 6, lg: 5 }}>
                 <Box className="footer-header">CONTACT</Box>
                 <Box>
                   <Box sx={{ display: "flex" }}>
@@ -72,7 +63,7 @@ const Footer = () => {
                     <Typography
                       sx={{ pl: 1, mb: 1, fontSize: "14px", color: "#819291" }}
                     >
-                      9894162002
+                      9486958501
                     </Typography>
                   </Box>
                   <Box sx={{ display: "flex", fontSize: "15px" }}>
@@ -80,7 +71,7 @@ const Footer = () => {
                     <Typography
                       sx={{ pl: 1, mb: 1, fontSize: "14px", color: "#819291" }}
                     >
-                      sathishvelmurugan0406@gmail.com
+                      chenduranclinic@gmail.com
                     </Typography>
                   </Box>
                 </Box>
